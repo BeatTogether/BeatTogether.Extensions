@@ -22,7 +22,8 @@ jobs:
       - name: Pack
         run: |
           dotnet pack -c Release --output nupkgs BeatTogether.Extensions.Configuration/BeatTogether.Extensions.Configuration.csproj
-          dotnet pack -c Release --output nupkgs BeatTogether.Extensions.Redis/BeatTogether.Extensions.Redis.csproj
+          dotnet pack -c Release --output nupkgs BeatTogether.Extensions.StackExchange.Redis/BeatTogether.Extensions.StackExchange.Redis.csproj
+          dotnet pack -c Release --output nupkgs BeatTogether.Extensions.RabbitMQ/BeatTogether.Extensions.RabbitMQ.csproj
       - name: Publish
         run: |
           dotnet nuget push "nupkgs/BeatTogether.Extensions.*.nupkg" -k ${{secrets.NUGET_API_KEY}} --skip-duplicate
@@ -44,7 +45,8 @@ jobs:
       - name: Pack
         run: |
           dotnet pack -c Release --output nupkgs BeatTogether.Extensions.Configuration/BeatTogether.Extensions.Configuration.csproj
-          dotnet pack -c Release --output nupkgs BeatTogether.Extensions.Redis/BeatTogether.Extensions.Redis.csproj
+          dotnet pack -c Release --output nupkgs BeatTogether.Extensions.StackExchange.Redis/BeatTogether.Extensions.StackExchange.Redis.csproj
+          dotnet pack -c Release --output nupkgs BeatTogether.Extensions.RabbitMQ/BeatTogether.Extensions.RabbitMQ.csproj
       - name: Publish
         run: |
           dotnet nuget push "nupkgs/BeatTogether.Extensions.*.nupkg" -k ${{secrets.NUGET_API_KEY}} --skip-duplicate
