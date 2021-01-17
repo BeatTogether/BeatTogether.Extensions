@@ -4,12 +4,11 @@ using System.IO;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using BeatTogether.Extensions.Redis.Abstractions;
-using BeatTogether.Extensions.Redis.Configuration;
+using BeatTogether.Extensions.StackExchange.Redis.Abstractions;
 using StackExchange.Redis;
 using StackExchange.Redis.Profiling;
 
-namespace BeatTogether.Extensions.Redis.Implementations
+namespace BeatTogether.Extensions.StackExchange.Redis.Implementations
 {
     public class ConnectionMultiplexerPool : IConnectionMultiplexerPool, IDisposable
     {

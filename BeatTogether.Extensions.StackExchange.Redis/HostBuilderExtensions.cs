@@ -1,12 +1,12 @@
-﻿using BeatTogether.Extensions.Redis.Abstractions;
-using BeatTogether.Extensions.Redis.Configuration;
-using BeatTogether.Extensions.Redis.Implementations;
+﻿using BeatTogether.Extensions.StackExchange.Redis.Abstractions;
+using BeatTogether.Extensions.StackExchange.Redis.Configuration;
+using BeatTogether.Extensions.StackExchange.Redis.Implementations;
 using Depths.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using StackExchange.Redis;
 
-namespace Depths.Extensions.Redis
+namespace Depths.Extensions.StackExchange.Redis
 {
     public static class HostBuilderExtensions
     {
@@ -21,7 +21,7 @@ namespace Depths.Extensions.Redis
                         {
                             AbortOnConnectFail = false
                         };
-                        connectionMultiplexerConfiguration.EndPoints.Add(configuration.Endpoint);
+                        connectionMultiplexerConfiguration.EndPoints.Add(configuration.EndPoint);
                         return connectionMultiplexerConfiguration;
                     })
                     .AddSingleton<IConnectionMultiplexerPool, ConnectionMultiplexerPool>()

@@ -1,6 +1,6 @@
 ﻿using StackExchange.Redis;
 
-namespace BeatTogether.Extensions.Redis.Abstractions
+namespace BeatTogether.Extensions.StackExchange.Redis.Abstractions
 {
     public interface IConnectionMultiplexerPool
     {

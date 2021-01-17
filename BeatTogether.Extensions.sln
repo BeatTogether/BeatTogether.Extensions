@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30626.31
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeatTogether.Extensions.Configuration", "BeatTogether.Extensions.Configuration\BeatTogether.Extensions.Configuration.csproj", "{63663054-A80E-417E-985E-7FD2C106F248}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeatTogether.Extensions.Configuration", "BeatTogether.Extensions.Configuration\BeatTogether.Extensions.Configuration.csproj", "{63663054-A80E-417E-985E-7FD2C106F248}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeatTogether.Extensions.Redis", "BeatTogether.Extensions.Redis\BeatTogether.Extensions.Redis.csproj", "{7FC01554-0057-4A5F-BBE6-16224A3DA20D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeatTogether.Extensions.StackExchange.Redis", "BeatTogether.Extensions.StackExchange.Redis\BeatTogether.Extensions.StackExchange.Redis.csproj", "{7FC01554-0057-4A5F-BBE6-16224A3DA20D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeatTogether.Extensions.RabbitMQ", "BeatTogether.Extensions.RabbitMQ\BeatTogether.Extensions.RabbitMQ.csproj", "{1F701436-3F6A-41DF-B3E6-D5D76F4EAA6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7FC01554-0057-4A5F-BBE6-16224A3DA20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FC01554-0057-4A5F-BBE6-16224A3DA20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FC01554-0057-4A5F-BBE6-16224A3DA20D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F701436-3F6A-41DF-B3E6-D5D76F4EAA6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F701436-3F6A-41DF-B3E6-D5D76F4EAA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F701436-3F6A-41DF-B3E6-D5D76F4EAA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F701436-3F6A-41DF-B3E6-D5D76F4EAA6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

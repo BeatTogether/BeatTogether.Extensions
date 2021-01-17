@@ -7,7 +7,7 @@
     <Authors>pythonology</Authors>
     <Company>pythonology</Company>
     <RepositoryUrl>https://github.com/pythonology/BeatTogether.Extensions</RepositoryUrl>
-    <Description>Extensions for Microsoft.Extensions.Configuration.</Description>
+    <Description>Extensions for configuring RabbitMQ.</Description>
     <Version>1.0.0</Version>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -17,7 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="Autobus.Transports.RabbitMQ" Version="0.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BeatTogether.Extensions.Configuration\BeatTogether.Extensions.Configuration.csproj" />
   </ItemGroup>
 
 </Project>

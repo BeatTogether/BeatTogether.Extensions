@@ -1,4 +1,4 @@
-﻿namespace BeatTogether.Extensions.Redis.Configuration
+﻿namespace BeatTogether.Extensions.StackExchange.Redis.Configuration
 {
     public class RedisConfiguration
     {
@@ -7,7 +7,7 @@
             public int Size { get; set; } = 1;
         }
 
-        public string? Endpoint { get; set; }
+        public string EndPoint { get; set; } = "localhost:6379";
         public ConnectionPoolConfiguration ConnectionPool { get; set; } = new();
     }
 }
