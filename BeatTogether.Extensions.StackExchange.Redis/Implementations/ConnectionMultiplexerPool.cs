@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using BeatTogether.Extensions.StackExchange.Redis.Abstractions;
+using BeatTogether.Extensions.StackExchange.Redis.Configuration;
 using StackExchange.Redis;
 using StackExchange.Redis.Profiling;
 

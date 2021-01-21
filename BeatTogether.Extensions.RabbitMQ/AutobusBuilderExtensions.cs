@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using RabbitMQ.Client;
 
-namespace Depths.Extensions
+namespace BeatTogether.Extensions
 {
     public static class AutobusBuilderExtensions
     {

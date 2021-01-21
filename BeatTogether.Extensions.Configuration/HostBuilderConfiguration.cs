@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
-namespace BeatTogether.Extensions.Configuration
+namespace BeatTogether.Extensions
 {
     public static class HostBuilderConfiguration
     {
@@ -13,8 +13,6 @@ namespace BeatTogether.Extensions.Configuration
                     .SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile("appsettings.json", true)
                     .AddJsonFile($"appsettings.{hostBuilderContext.HostingEnvironment.EnvironmentName}.json", true)
-                    .AddJsonFile("sharedsettings.json", true)
-                    .AddJsonFile($"sharedsettings.{hostBuilderContext.HostingEnvironment.EnvironmentName}.json", true)
                     .AddEnvironmentVariables();
             });
     }

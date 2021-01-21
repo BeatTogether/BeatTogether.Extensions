@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Depths.Extensions.Configuration
+namespace BeatTogether.Extensions
 {
     public static class ServiceCollectionExtensions
     {
