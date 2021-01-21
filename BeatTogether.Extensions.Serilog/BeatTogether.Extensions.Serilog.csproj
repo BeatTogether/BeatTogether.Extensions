@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>9</LangVersion>
+    <PackageIcon>icon.png</PackageIcon>
+    <Authors>pythonology</Authors>
+    <Company>pythonology</Company>
+    <RepositoryUrl>https://github.com/pythonology/BeatTogether.Extensions</RepositoryUrl>
+    <Description>Extensions for configuring Serilog.</Description>
+    <Version>1.0.0</Version>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="../icon.png" PackagePath="" Visible="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BeatTogether.Extensions.Configuration\BeatTogether.Extensions.Configuration.csproj" />
+  </ItemGroup>
+
+</Project>

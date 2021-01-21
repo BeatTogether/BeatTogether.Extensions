@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeatTogether.Extensions.Con
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeatTogether.Extensions.StackExchange.Redis", "BeatTogether.Extensions.StackExchange.Redis\BeatTogether.Extensions.StackExchange.Redis.csproj", "{7FC01554-0057-4A5F-BBE6-16224A3DA20D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeatTogether.Extensions.RabbitMQ", "BeatTogether.Extensions.RabbitMQ\BeatTogether.Extensions.RabbitMQ.csproj", "{1F701436-3F6A-41DF-B3E6-D5D76F4EAA6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeatTogether.Extensions.RabbitMQ", "BeatTogether.Extensions.RabbitMQ\BeatTogether.Extensions.RabbitMQ.csproj", "{1F701436-3F6A-41DF-B3E6-D5D76F4EAA6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeatTogether.Extensions.Serilog", "BeatTogether.Extensions.Serilog\BeatTogether.Extensions.Serilog.csproj", "{C3B52CDC-C60A-4FCE-8B48-3EA294BE6AA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{1F701436-3F6A-41DF-B3E6-D5D76F4EAA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F701436-3F6A-41DF-B3E6-D5D76F4EAA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F701436-3F6A-41DF-B3E6-D5D76F4EAA6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3B52CDC-C60A-4FCE-8B48-3EA294BE6AA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3B52CDC-C60A-4FCE-8B48-3EA294BE6AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3B52CDC-C60A-4FCE-8B48-3EA294BE6AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3B52CDC-C60A-4FCE-8B48-3EA294BE6AA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
