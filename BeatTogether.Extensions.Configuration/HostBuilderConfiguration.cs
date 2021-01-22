@@ -6,13 +6,13 @@ namespace BeatTogether.Extensions
 {
     public static class HostBuilderConfiguration
     {
-        public static IHostBuilder ConfigureAppConfiguration(this IHostBuilder hostBuilder) =>
+        public static IHostBuilder ConfigureAppConfiguration(this IHostBuilder hostBuilder, bool reloadOnChange = false) =>
             hostBuilder.ConfigureAppConfiguration((hostBuilderContext, configurationBuilder) =>
             {
                 configurationBuilder
                     .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("appsettings.json", true)
-                    .AddJsonFile($"appsettings.{hostBuilderContext.HostingEnvironment.EnvironmentName}.json", true)
+                    .AddJsonFile("appsettings.json", true, reloadOnChange)
+                    .AddJsonFile($"appsettings.{hostBuilderContext.HostingEnvironment.EnvironmentName}.json", true, reloadOnChange)
                     .AddEnvironmentVariables();
             });
     }
