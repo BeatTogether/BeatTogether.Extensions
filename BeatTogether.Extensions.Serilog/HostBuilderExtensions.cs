@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Serilog;
 
 namespace BeatTogether.Extensions
@@ -12,6 +13,8 @@ namespace BeatTogether.Extensions
             hostBuilder.ConfigureServices((hostBuilderContext, services) =>
                 services.AddLogging(loggingBuilder =>
                 {
+                    loggingBuilder.ClearProviders();
+
                     var section = hostBuilderContext.Configuration.GetSection("Serilog");
                     var configuration = section is not null
                         ? section.Get<SerilogConfiguration>()
