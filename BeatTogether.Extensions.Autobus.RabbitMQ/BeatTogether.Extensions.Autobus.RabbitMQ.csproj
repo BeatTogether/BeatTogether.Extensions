@@ -8,7 +8,7 @@
     <Company>pythonology</Company>
     <RepositoryUrl>https://github.com/pythonology/BeatTogether.Extensions</RepositoryUrl>
     <Description>Extensions for configuring RabbitMQ.</Description>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
@@ -17,10 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autobus.Extensions.Hosting" Version="0.1.2" />
-    <PackageReference Include="Autobus.Loggers.Serilog" Version="0.1.0" />
-    <PackageReference Include="Autobus.Serializers.BinaryRecords" Version="0.1.4" />
-    <PackageReference Include="Autobus.Transports.RabbitMQ" Version="0.1.4" />
+    <PackageReference Include="Autobus.Extensions.Hosting" Version="0.1.5" />
+    <PackageReference Include="Autobus.Loggers.Serilog" Version="0.1.2" />
+    <PackageReference Include="Autobus.Serializers.BinaryRecords" Version="0.2.0" />
+    <PackageReference Include="Autobus.Transports.RabbitMQ" Version="0.1.7" />
   </ItemGroup>
 
   <ItemGroup>
