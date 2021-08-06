@@ -22,8 +22,8 @@ namespace BeatTogether.Extensions
         public static void WriteVarLong(this ref BinaryBufferWriter bufferWriter, long value)
             => bufferWriter.WriteVarULong((value < 0L ? (ulong)((-value << 1) - 1L) : (ulong)(value << 1)));
 
-        public static void WriteVarUInt(this ref BinaryBufferWriter buffer, uint value)
-            => buffer.WriteVarULong(value);
+        public static void WriteVarUInt(this ref BinaryBufferWriter bufferWriter, uint value)
+            => bufferWriter.WriteVarULong(value);
 
         public static void WriteVarInt(this ref BinaryBufferWriter bufferWriter, int value)
             => bufferWriter.WriteVarLong(value);

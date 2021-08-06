@@ -24,6 +24,7 @@ jobs:
           dotnet pack -c Release --output nupkgs BeatTogether.Extensions.Autobus.RabbitMQ/BeatTogether.Extensions.Autobus.RabbitMQ.csproj
           dotnet pack -c Release --output nupkgs BeatTogether.Extensions.BinaryRecords/BeatTogether.Extensions.BinaryRecords.csproj
           dotnet pack -c Release --output nupkgs BeatTogether.Extensions.Configuration/BeatTogether.Extensions.Configuration.csproj
+          dotnet pack -c Release --output nupkgs BeatTogether.Extensions.LiteNetLib/BeatTogether.Extensions.LiteNetLib.csproj
           dotnet pack -c Release --output nupkgs BeatTogether.Extensions.Serilog/BeatTogether.Extensions.Serilog.csproj
           dotnet pack -c Release --output nupkgs BeatTogether.Extensions.StackExchange.Redis/BeatTogether.Extensions.StackExchange.Redis.csproj
       - name: Publish
@@ -49,6 +50,7 @@ jobs:
           dotnet pack -c Release --output nupkgs BeatTogether.Extensions.Autobus.RabbitMQ/BeatTogether.Extensions.Autobus.RabbitMQ.csproj
           dotnet pack -c Release --output nupkgs BeatTogether.Extensions.BinaryRecords/BeatTogether.Extensions.BinaryRecords.csproj
           dotnet pack -c Release --output nupkgs BeatTogether.Extensions.Configuration/BeatTogether.Extensions.Configuration.csproj
+          dotnet pack -c Release --output nupkgs BeatTogether.Extensions.LiteNetLib/BeatTogether.Extensions.LiteNetLib.csproj
           dotnet pack -c Release --output nupkgs BeatTogether.Extensions.Serilog/BeatTogether.Extensions.Serilog.csproj
           dotnet pack -c Release --output nupkgs BeatTogether.Extensions.StackExchange.Redis/BeatTogether.Extensions.StackExchange.Redis.csproj
       - name: Publish

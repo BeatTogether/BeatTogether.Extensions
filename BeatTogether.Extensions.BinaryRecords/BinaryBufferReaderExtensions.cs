@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Text;
 using BinaryRecords;
@@ -35,7 +36,7 @@ namespace BeatTogether.Extensions
         public static int ReadVarInt(this ref BinaryBufferReader bufferReader)
             => (int)bufferReader.ReadVarLong();
 
-        public static bool TryReadVarULong(this ref BinaryBufferReader bufferReader, out ulong value)
+        public static bool TryReadVarULong(this ref BinaryBufferReader bufferReader, [MaybeNullWhen(false)] out ulong value)
         {
             value = 0UL;
             var shift = 0;
@@ -52,7 +53,7 @@ namespace BeatTogether.Extensions
             return false;
         }
 
-        public static bool TryReadVarUInt(this ref BinaryBufferReader bufferReader, out uint value)
+        public static bool TryReadVarUInt(this ref BinaryBufferReader bufferReader, [MaybeNullWhen(false)] out uint value)
         {
             ulong num;
             if (bufferReader.TryReadVarULong(out num) && (num >> 32) == 0UL)

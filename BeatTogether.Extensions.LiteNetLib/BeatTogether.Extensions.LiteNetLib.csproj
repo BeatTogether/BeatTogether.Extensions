@@ -7,8 +7,8 @@
     <Authors>pythonology</Authors>
     <Company>pythonology</Company>
     <RepositoryUrl>https://github.com/pythonology/BeatTogether.Extensions</RepositoryUrl>
-    <Description>Extensions for BinaryRecords.</Description>
-    <Version>1.0.1</Version>
+    <Description>Extensions for LiteNetLib.</Description>
+    <Version>1.0.0</Version>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BinaryRecords" Version="0.4.1" />
+    <PackageReference Include="LiteNetLib" Version="0.9.5" />
   </ItemGroup>
 
 </Project>
