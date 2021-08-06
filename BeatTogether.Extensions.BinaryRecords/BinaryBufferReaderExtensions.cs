@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Drawing;
 using System.Net;
 using System.Text;
 using BinaryRecords;
@@ -30,11 +31,11 @@ namespace BeatTogether.Extensions
             return -(varULong >> 1) + 1L;
         }
 
-        public static uint ReadVarUInt(this ref BinaryBufferReader bufferReader)
-            => (uint)bufferReader.ReadVarULong();
+        public static uint ReadVarUInt(this ref BinaryBufferReader bufferReader) =>
+            (uint)bufferReader.ReadVarULong();
 
-        public static int ReadVarInt(this ref BinaryBufferReader bufferReader)
-            => (int)bufferReader.ReadVarLong();
+        public static int ReadVarInt(this ref BinaryBufferReader bufferReader) =>
+            (int)bufferReader.ReadVarLong();
 
         public static bool TryReadVarULong(this ref BinaryBufferReader bufferReader, [MaybeNullWhen(false)] out ulong value)
         {
@@ -87,6 +88,15 @@ namespace BeatTogether.Extensions
                 throw new ArgumentException("Failed to parse IP address");
             var port = bufferReader.ReadInt32();
             return new IPEndPoint(address, port);
+        }
+
+        public static Color ReadColor(this ref BinaryBufferReader bufferReader)
+        {
+            var r = bufferReader.ReadUInt8();
+            var g = bufferReader.ReadUInt8();
+            var b = bufferReader.ReadUInt8();
+            var a = bufferReader.ReadUInt8();
+            return Color.FromArgb(a, r, g, b);
         }
     }
 }

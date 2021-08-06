@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Drawing;
 using LiteNetLib.Utils;
 
 namespace BeatTogether.Extensions.LiteNetLib
@@ -27,11 +28,11 @@ namespace BeatTogether.Extensions.LiteNetLib
             return -(varULong >> 1) + 1L;
         }
 
-        public static uint GetVarUInt(this NetDataReader reader)
-            => (uint)reader.GetVarULong();
+        public static uint GetVarUInt(this NetDataReader reader) =>
+            (uint)reader.GetVarULong();
 
-        public static int GetVarInt(this NetDataReader reader)
-            => (int)reader.GetVarLong();
+        public static int GetVarInt(this NetDataReader reader) =>
+            (int)reader.GetVarLong();
 
         public static bool TryGetVarULong(this NetDataReader reader, [MaybeNullWhen(false)] out ulong value)
         {
@@ -61,6 +62,15 @@ namespace BeatTogether.Extensions.LiteNetLib
 
             value = 0U;
             return false;
+        }
+
+        public static Color GetColor(this NetDataReader reader)
+        {
+            var r = reader.GetByte();
+            var g = reader.GetByte();
+            var b = reader.GetByte();
+            var a = reader.GetByte();
+            return Color.FromArgb(a, r, g, b);
         }
     }
 }

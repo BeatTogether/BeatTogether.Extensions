@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Net;
 using System.Text;
 using BinaryRecords;
@@ -19,19 +20,19 @@ namespace BeatTogether.Extensions
             } while (value != 0UL);
         }
 
-        public static void WriteVarLong(this ref BinaryBufferWriter bufferWriter, long value)
-            => bufferWriter.WriteVarULong((value < 0L ? (ulong)((-value << 1) - 1L) : (ulong)(value << 1)));
+        public static void WriteVarLong(this ref BinaryBufferWriter bufferWriter, long value) =>
+            bufferWriter.WriteVarULong((value < 0L ? (ulong)((-value << 1) - 1L) : (ulong)(value << 1)));
 
-        public static void WriteVarUInt(this ref BinaryBufferWriter bufferWriter, uint value)
-            => bufferWriter.WriteVarULong(value);
+        public static void WriteVarUInt(this ref BinaryBufferWriter bufferWriter, uint value) =>
+            bufferWriter.WriteVarULong(value);
 
-        public static void WriteVarInt(this ref BinaryBufferWriter bufferWriter, int value)
-            => bufferWriter.WriteVarLong(value);
+        public static void WriteVarInt(this ref BinaryBufferWriter bufferWriter, int value) =>
+            bufferWriter.WriteVarLong(value);
 
-        public static void WriteVarBytes(this ref BinaryBufferWriter bufferWriter, ReadOnlySpan<byte> bytes)
+        public static void WriteVarBytes(this ref BinaryBufferWriter bufferWriter, ReadOnlySpan<byte> value)
         {
-            bufferWriter.WriteVarUInt((uint)bytes.Length);
-            bufferWriter.WriteBytes(bytes);
+            bufferWriter.WriteVarUInt((uint)value.Length);
+            bufferWriter.WriteBytes(value);
         }
 
         public static void WriteString(this ref BinaryBufferWriter bufferWriter, string value)
@@ -40,10 +41,18 @@ namespace BeatTogether.Extensions
             bufferWriter.WriteBytes(Encoding.UTF8.GetBytes(value));
         }
 
-        public static void WriteIPEndPoint(this ref BinaryBufferWriter bufferWriter, IPEndPoint ipEndPoint)
+        public static void WriteIPEndPoint(this ref BinaryBufferWriter bufferWriter, IPEndPoint value)
         {
-            bufferWriter.WriteString(ipEndPoint.Address.ToString());
-            bufferWriter.WriteInt32(ipEndPoint.Port);
+            bufferWriter.WriteString(value.Address.ToString());
+            bufferWriter.WriteInt32(value.Port);
+        }
+
+        public static void WriteColor(this ref BinaryBufferWriter bufferWriter, Color value)
+        {
+            bufferWriter.WriteUInt8(value.R);
+            bufferWriter.WriteUInt8(value.G);
+            bufferWriter.WriteUInt8(value.B);
+            bufferWriter.WriteUInt8(value.A);
         }
     }
 }
