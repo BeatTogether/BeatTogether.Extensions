@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using LiteNetLib.Utils;
 
-namespace BeatTogether.Extensions.LiteNetLib
+namespace BeatTogether.Extensions
 {
     public static class NetDataWriterExtensions
     {
