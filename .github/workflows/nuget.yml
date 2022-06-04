@@ -18,7 +18,7 @@ jobs:
           dotnet-version: 5.0.100
           source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
         env:
-          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NUGET_AUTH_TOKEN: ${{secrets.GHTOKEN}}
       - name: Pack
         run: |
           dotnet pack -c Release --output nupkgs BeatTogether.Extensions.Autobus.RabbitMQ/BeatTogether.Extensions.Autobus.RabbitMQ.csproj
@@ -29,7 +29,7 @@ jobs:
           dotnet pack -c Release --output nupkgs BeatTogether.Extensions.StackExchange.Redis/BeatTogether.Extensions.StackExchange.Redis.csproj
       - name: Publish
         run: |
-          dotnet nuget push "nupkgs/BeatTogether.Extensions.*.nupkg" -k ${{secrets.GITHUB_TOKEN}} --skip-duplicate
+          dotnet nuget push "nupkgs/BeatTogether.Extensions.*.nupkg" -k ${{secrets.GHTOKEN}} --skip-duplicate
 
   nuget-2:
     name: https://api.nuget.org/v3/index.json
