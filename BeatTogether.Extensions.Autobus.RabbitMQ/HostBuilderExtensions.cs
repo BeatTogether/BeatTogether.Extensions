@@ -9,7 +9,7 @@ namespace BeatTogether.Extensions
             hostBuilder.UseAutobus((hostBuilderContext, builder) =>
                 builder
                     .UseSerilog()
-                    .UseJsonSerialization()
+                    .UseBinaryRecordsSerialization()
                     .UseRabbitMQTransport(hostBuilderContext.Configuration)
                     .UseServicesFromAllAssemblies()
             );
