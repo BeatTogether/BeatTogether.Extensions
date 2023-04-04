@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using BeatTogether.Extensions.StackExchange.Redis.Abstractions;
 using BeatTogether.Extensions.StackExchange.Redis.Configuration;
 using StackExchange.Redis;
+using StackExchange.Redis.Maintenance;
 using StackExchange.Redis.Profiling;
 
 namespace BeatTogether.Extensions.StackExchange.Redis.Implementations
@@ -32,6 +33,7 @@ namespace BeatTogether.Extensions.StackExchange.Redis.Implementations
             public bool IsConnected => _connectionMultiplexer.IsConnected;
             public bool IsConnecting => _connectionMultiplexer.IsConnecting;
 
+            [Obsolete]
             public bool IncludeDetailInExceptions
             {
                 get => _connectionMultiplexer.IncludeDetailInExceptions;
@@ -85,9 +87,20 @@ namespace BeatTogether.Extensions.StackExchange.Redis.Implementations
                 remove => _connectionMultiplexer.HashSlotMoved -= value;
             }
 
+            public event EventHandler<ServerMaintenanceEvent> ServerMaintenanceEvent
+            {
+                add => _connectionMultiplexer.ServerMaintenanceEvent += value;
+                remove => _connectionMultiplexer.ServerMaintenanceEvent -= value;
+            }
+
             public PooledConnectionMultiplexer(IConnectionMultiplexer connectionMultiplexer)
             {
                 _connectionMultiplexer = connectionMultiplexer;
+            }
+
+            public override string ToString()
+            {
+                return _connectionMultiplexer.ToString();
             }
 
             public void Close(bool allowCommandsToComplete = true)
@@ -133,13 +146,16 @@ namespace BeatTogether.Extensions.StackExchange.Redis.Implementations
             public IServer GetServer(EndPoint endpoint, object? asyncState = null)
                 => _connectionMultiplexer.GetServer(endpoint, asyncState);
 
+            public IServer[] GetServers()
+                => _connectionMultiplexer.GetServers();
+
             public string GetStatus()
                 => _connectionMultiplexer.GetStatus();
 
             public void GetStatus(TextWriter log)
                 => _connectionMultiplexer.GetStatus(log);
 
-            public string GetStormLog()
+            public string? GetStormLog()
                 => _connectionMultiplexer.GetStormLog();
 
             public ISubscriber GetSubscriber(object? asyncState = null)
@@ -171,6 +187,9 @@ namespace BeatTogether.Extensions.StackExchange.Redis.Implementations
 
             public static async Task<PooledConnectionMultiplexer> ConnectAsync(ConfigurationOptions options, TextWriter? log = null)
                 => new PooledConnectionMultiplexer(await ConnectionMultiplexer.ConnectAsync(options, log));
+
+            public ValueTask DisposeAsync()
+                => _connectionMultiplexer.DisposeAsync();
         }
 
         private readonly RedisConfiguration _configuration;
