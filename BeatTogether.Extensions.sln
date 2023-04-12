@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30626.31
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeatTogether.Extensions.Autobus.RabbitMQ", "BeatTogether.Extensions.Autobus.RabbitMQ\BeatTogether.Extensions.Autobus.RabbitMQ.csproj", "{1F701436-3F6A-41DF-B3E6-D5D76F4EAA6B}"
 EndProject
@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeatTogether.Extensions.Ser
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeatTogether.Extensions.BinaryRecords", "BeatTogether.Extensions.BinaryRecords\BeatTogether.Extensions.BinaryRecords.csproj", "{DA39B3C6-5F3B-4BA1-898D-5BADEF7AA09F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeatTogether.Extensions.LiteNetLib", "BeatTogether.Extensions.LiteNetLib\BeatTogether.Extensions.LiteNetLib.csproj", "{97CFE835-4F55-492B-9AF2-C82D540E38E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeatTogether.Extensions.LiteNetLib", "BeatTogether.Extensions.LiteNetLib\BeatTogether.Extensions.LiteNetLib.csproj", "{97CFE835-4F55-492B-9AF2-C82D540E38E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
