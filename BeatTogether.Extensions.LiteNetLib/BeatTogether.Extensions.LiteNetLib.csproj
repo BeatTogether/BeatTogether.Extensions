@@ -8,7 +8,7 @@
     <Company>pythonology</Company>
     <RepositoryUrl>https://github.com/beattogether/BeatTogether.Extensions</RepositoryUrl>
     <Description>Extensions for LiteNetLib.</Description>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
