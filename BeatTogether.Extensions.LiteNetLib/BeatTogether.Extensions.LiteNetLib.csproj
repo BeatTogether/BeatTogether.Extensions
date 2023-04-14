@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <LangVersion>9</LangVersion>
     <PackageIcon>icon.png</PackageIcon>
     <Authors>pythonology</Authors>
@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="LiteNetLib" Version="1.0.1.1" />
+    <PackageReference Include="LiteNetLib" Version="0.9.5.2" />
   </ItemGroup>
 
 </Project>
