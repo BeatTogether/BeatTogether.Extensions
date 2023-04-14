@@ -8,7 +8,7 @@
     <Company>pythonology</Company>
     <RepositoryUrl>https://github.com/beattogether/BeatTogether.Extensions</RepositoryUrl>
     <Description>Extensions for configuring Redis.</Description>
-    <Version>1.0.5</Version>
+    <Version>1.1.0</Version>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
